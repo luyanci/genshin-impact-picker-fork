@@ -39,7 +39,6 @@ jobs:
         uses: actions/download-artifact@v3
       - name: extract new
         if: runner.os == 'Linux' || runner.os == 'macOS'
-
         run: |          
          7z x ./frontend -oelectron-static/ -y
       - name: extract new(Windows)
