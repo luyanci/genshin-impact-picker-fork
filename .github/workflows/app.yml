@@ -14,7 +14,9 @@ jobs:
     uses: ./.github/workflows/page.yml
   app-windows:
     needs: frontend
-    runs-on: windows-latest
+    matrix:
+        os: [windows,ubuntu,macos]
+    runs-on: ${{ matrix.os }}-latest
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js 16.x
@@ -25,9 +27,9 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ./electron-static/node_modules
-          key: ${{ runner.OS }}-npm-app-cache
+          key: ${{ matrix.os }}-npm-app-cache
           restore-keys: |
-            ${{ runner.OS }}-npm-app-cache
+            ${{ matrix.os }}-npm-app-cache
       - name: Install Dependencies
         run: |
          cd electron-static
@@ -45,9 +47,9 @@ jobs:
       - name: Package all
         run: |
          cd electron-static
-         7z a -tzip genish-impact-win-x64.zip ./genish-impact-Win32-x64
-      - name: Upload (Windows)
+         7z a -tzip genish-impact-${{ matrix.os }}-x64.zip ./genish-impact-*
+      - name: Upload (${{ matrix.os }})
         uses: actions/upload-artifact@v3
         with:
-          name: genish-impact-win
-          path: electron-static/genish-impact-win-x64.zip
+          name: genish-impact-${{ matrix.os }}
+          path: electron-static/genish-impact-${{ matrix.os }}-x64.zip
