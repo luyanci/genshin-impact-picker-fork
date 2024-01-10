@@ -53,6 +53,7 @@ jobs:
       - name: Package all
         run: |
          cd electron-static
+         ls
          7z a -tzip genish-impact-${{ matrix.os }}-x64.zip ./genish-impact-*
       - name: Upload (${{ matrix.os }})
         uses: actions/upload-artifact@v3
