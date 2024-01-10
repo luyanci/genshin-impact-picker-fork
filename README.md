@@ -49,4 +49,5 @@ Fork此仓库后 到Netlify点击`Add new site`然后选择本仓库并按照以
 - Base Directory: `Genshin-Impact-Wish-Simulator`
 - Publish Directory: `.vercel/output/static`
 - Build Command: `yarn run build`
+
 然后等待部署完成，完成后访问Netlify提供的域名即可
