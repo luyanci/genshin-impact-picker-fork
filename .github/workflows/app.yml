@@ -12,7 +12,7 @@ on:
 jobs:
   frontend:
     uses: ./.github/workflows/page.yml
-  app-windows:
+  app:
     needs: frontend
   strategy:
     matrix:
