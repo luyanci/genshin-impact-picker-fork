@@ -46,9 +46,9 @@ $ npm run build-win (生成win32-x64)
 ### Deploy with Netlify&other
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/cyanial/genshin-impact-picker&base=Genshin-Impact-Wish-Simulator)
 
-点击本按钮后并按照以下设置
+点击本按钮后，到`Site Configuration--Build&Deploy--Build Setting--Configure`下修改以下设置
 - Base Directory: `Genshin-Impact-Wish-Simulator`
 - Publish Directory: `.vercel/output/static`
 - Build Command: `yarn run build`
 
-然后等待部署完成，完成后访问Netlify提供的域名即可
+然后重新部署，完成后访问Netlify提供的域名即可
