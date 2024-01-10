@@ -14,6 +14,7 @@ jobs:
     uses: ./.github/workflows/page.yml
   app-windows:
     needs: frontend
+  strategy:
     matrix:
         os: [windows,ubuntu,macos]
     runs-on: ${{ matrix.os }}-latest
