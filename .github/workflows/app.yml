@@ -38,11 +38,11 @@ jobs:
       - name: Download Artifact
         uses: actions/download-artifact@v3
       - name: extract new
-        if: ${{ runner.os }}!=windows
+        if: ${{ runner.os }} != 'windows'
         run: |          
          7z x ./frontend -oelectron-static/ -y
       - name: extract new(Windows)
-        if: ${{ runner.os }}==windows
+        if: ${{ runner.os }} == 'windows'
         run: |          
          7z x .\frontend -oelectron-static/ -y
       - name: Build
