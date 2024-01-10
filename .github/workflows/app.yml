@@ -50,7 +50,7 @@ jobs:
         run: |
          cd electron-static
          yarn run build
-      - name: Package all
+      - name: Package (${{ matrix.os }})
         run: |
          cd electron-static
          7z a -tzip genish-impact-${{ matrix.os }}-x64.zip ./genish-impact-*
