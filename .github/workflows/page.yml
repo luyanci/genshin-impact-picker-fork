@@ -29,11 +29,11 @@ jobs:
             ${{ runner.OS }}-npm-frontend-cache
       - name: Install Dependencies
         run: |
-         cd Genshin-Impact-Wish-Simulator
+         #cd Genshin-Impact-Wish-Simulator
          yarn install
       - name: Build
         run: |
-         cd Genshin-Impact-Wish-Simulator
+         #cd Genshin-Impact-Wish-Simulator
          yarn run build
       - name: Package
         run: |
