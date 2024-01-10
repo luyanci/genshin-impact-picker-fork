@@ -10,7 +10,7 @@ on:
       - ./Genshin-Impact-Wish-Simulator/*
 
 jobs:
-  pages:
+  Build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
