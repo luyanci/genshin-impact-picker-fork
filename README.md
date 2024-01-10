@@ -45,8 +45,9 @@ $ npm run build-win (生成win32-x64)
 
 ### Deploy with Netlify&other
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/
-cyanial/Genshin-impact-picker)
-Fork此仓库后 到Netlify点击`Add new site`然后选择本仓库并按照以下设置
+cyanial/genshin-impact-picker)
+
+点击本按钮后并按照以下设置
 - Base Directory: `Genshin-Impact-Wish-Simulator`
 - Publish Directory: `.vercel/output/static`
 - Build Command: `yarn run build`
