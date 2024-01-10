@@ -1,4 +1,5 @@
 # Genshin-impact-picker
+[点击这里来在线体验](https://genshin-picker.netlify.app)
 
 ## Note
 
@@ -32,6 +33,7 @@ $ npm install
 $ npm run build (生成当前系统可执行文件)
 $ npm run build-win (生成win32-x64)
 ```
+## 网站部署
 
 ### Deploy with Vercel
 
@@ -40,3 +42,13 @@ $ npm run build-win (生成win32-x64)
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/cyanial/genshin-impact-picker)
 
 部署成功后，点击 `Settings-General` , 将 `Build & Development Settings` 下的 `Output Directory` 设置为 `.vercel/static`，将 `Root Directory` 设置为 `Genshin-Impact-Wish-Simulator`。回到 `Deployments` 下，点击当前部署最右侧的三个点，选择 `Redeploy`，等待部署完成后访问 Vercel 提供的域名即可使用。
+
+### Deploy with Netlify&other
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/cyanial/genshin-impact-picker&base=Genshin-Impact-Wish-Simulator)
+
+点击本按钮后，到`Site Configuration--Build&Deploy--Build Setting--Configure`下修改以下设置
+- Base Directory: `Genshin-Impact-Wish-Simulator`
+- Publish Directory: `.vercel/output/static`
+- Build Command: `yarn run build`
+
+然后重新部署，完成后访问Netlify提供的域名即可
