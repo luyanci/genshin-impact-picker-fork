@@ -10,10 +10,10 @@ on:
       - ./electron-static/*
 
 jobs:
-  frontend:
+  Page:
     uses: ./.github/workflows/page.yml
   Build-app:
-    needs: frontend
+    needs: Page
     strategy:
       matrix:
         os: [windows,ubuntu,macos]
