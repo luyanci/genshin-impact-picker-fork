@@ -41,7 +41,7 @@ jobs:
         if: ${{ matrix.os }}!=windows
         run: |          
          7z x ./frontend -oelectron-static/ -y
-      - name: extract new
+      - name: extract new(Windows)
         if: ${{ matrix.os }}==windows
         run: |          
          7z x .\frontend -oelectron-static/ -y
