@@ -52,3 +52,4 @@ $ npm run build-win (生成win32-x64)
 - Build Command: `yarn run build`
 
 然后重新部署，完成后访问Netlify提供的域名即可
+其他平台也可以按这个设置进行调整
