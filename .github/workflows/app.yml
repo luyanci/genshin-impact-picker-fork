@@ -38,9 +38,13 @@ jobs:
       - name: Download Artifact
         uses: actions/download-artifact@v3
       - name: extract new
+        if: ${{ matrix.os }}!=windows
+        run: |          
+         7z x ./frontend.zip -oelectron-static/ -y
+      - name: extract new
+        if: ${{ matrix.os }}==windows
         run: |          
          7z x .\frontend -oelectron-static/ -y
-
       - name: Build
         run: |
          cd electron-static
