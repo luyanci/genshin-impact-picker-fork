@@ -32,6 +32,7 @@ $ npm install
 $ npm run build (生成当前系统可执行文件)
 $ npm run build-win (生成win32-x64)
 ```
+## 网站部署
 
 ### Deploy with Vercel
 
