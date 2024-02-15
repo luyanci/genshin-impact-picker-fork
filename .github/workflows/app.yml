@@ -49,12 +49,30 @@ jobs:
          cd Genshin-Impact-Wish-Simulator
          yarn run tauri build
          ls
-      - name: Upload (${{ runner.os }})
+      - name: Upload (Windows)
+        if: runner.os == 'windows'
         uses: actions/upload-artifact@v3
         with:
           name: genish-impact-Tauri-${{ runner.os }}
           path: Genshin-Impact-Wish-Simulator/src-tauri/target/release/bundle/
-
+      - name: Upload Appimage (Linux)
+        if: runner.os == 'Linux'
+        uses: actions/upload-artifact@v3
+        with:
+          name: genish-impact-Tauri-${{ runner.os }}-appimage
+          path: Genshin-Impact-Wish-Simulator/src-tauri/target/release/bundle/appimage/wishsimulator_*.AppImage
+      - name: Upload deb (Linux)
+        if: runner.os == 'Linux'
+        uses: actions/upload-artifact@v3
+        with:
+          name: genish-impact-Tauri-${{ runner.os }}-deb
+          path: Genshin-Impact-Wish-Simulator/src-tauri/target/release/bundle/deb/wishsimulator_*.deb
+       - name: Upload Appimage (Macos)
+        if: runner.os == 'macos'
+        uses: actions/upload-artifact@v3
+        with:
+          name: genish-impact-Tauri-${{ runner.os }}
+          path: Genshin-Impact-Wish-Simulator/src-tauri/target/release/bundle/dmg/*
   Build-app:
     name: Build with electron
     needs: Page
