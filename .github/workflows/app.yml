@@ -56,6 +56,7 @@ jobs:
           path: Genshin-Impact-Wish-Simulator/src-tauri/target/release/bundle/
 
   Build-app:
+    name: Build with electron
     needs: Page
     strategy:
       fail-fast: false
