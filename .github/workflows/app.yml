@@ -48,7 +48,11 @@ jobs:
          cd Genshin-Impact-Wish-Simulator
          yarn run tauri build
          ls
-
+      - name: Upload (${{ runner.os }})
+        uses: actions/upload-artifact@v3
+        with:
+          name: genish-impact-${{ runner.os }}
+          path: Genshin-Impact-Wish-Simulator/src-tauri/target/release/
   Build-app:
     needs: Page
     strategy:
