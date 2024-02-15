@@ -16,6 +16,7 @@ jobs:
   Build-Tauri:
     name: Build with Tauri
     strategy:
+      fail-fast: false
       matrix:
         os: [windows,ubuntu,macos]
     runs-on: ${{ matrix.os }}-latest
@@ -57,6 +58,7 @@ jobs:
   Build-app:
     needs: Page
     strategy:
+      fail-fast: false
       matrix:
         os: [windows,ubuntu,macos]
     runs-on: ${{ matrix.os }}-latest
