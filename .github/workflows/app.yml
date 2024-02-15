@@ -53,7 +53,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: genish-impact-Tauri-${{ runner.os }}
-          path: Genshin-Impact-Wish-Simulator/src-tauri/target/release/
+          path: Genshin-Impact-Wish-Simulator/src-tauri/target/release/bundle/
 
   Build-app:
     needs: Page
