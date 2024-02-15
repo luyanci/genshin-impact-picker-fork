@@ -13,8 +13,12 @@ on:
 jobs:
   Page:
     uses: ./.github/workflows/page.yml
-  Tauri:
-    runs-on: ubuntu-latest
+  Build-Tauri:
+    name: Build with Tauri
+    strategy:
+      matrix:
+        os: [windows,ubuntu,macos]
+    runs-on: ${{ matrix.os }}-latest
     steps:
       - uses: actions/checkout@v4
       - name: install Rust stable
