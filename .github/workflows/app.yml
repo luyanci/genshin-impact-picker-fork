@@ -9,6 +9,13 @@ on:
     paths:
       - electron-static/**/**
       - Genshin-Impact-Wish-Simulator/**/**
+      - .github/workflows/app.yml
+ pull_request:
+    branches:
+      - main # default branch
+    paths:
+      - Genshin-Impact-Wish-Simulator/**/**
+      - .github/workflows/app.yml
 
 jobs:
   Page:
