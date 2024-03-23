@@ -81,6 +81,7 @@ jobs:
             id: setup-ndk
             with:
               ndk-version: r25c
+              add-to-path: false
           - name: Setup Java
             uses: actions/setup-java@v4
             with:
@@ -105,6 +106,7 @@ jobs:
              yarn install
           - name: Build
             run: |
+             export NDK_HOME=${{ steps.setup-ndk.outputs.ndk-path }}
              cd Genshin-Impact-Wish-Simulator
              yarn run tauri android init
              yarn run tauri android build
