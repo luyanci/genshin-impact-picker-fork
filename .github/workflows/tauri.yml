@@ -106,4 +106,5 @@ jobs:
           - name: Build
             run: |
              cd Genshin-Impact-Wish-Simulator
+             yarn run tauri android init
              yarn run tauri android build
