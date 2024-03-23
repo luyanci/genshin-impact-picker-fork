@@ -119,5 +119,10 @@ jobs:
           - name: Upload apk
             uses: actions/upload-artifact@v3
             with:
-              name: genish-impact-Tauri-android
+              name: genish-impact-Tauri-android-apk
               path: Genshin-Impact-Wish-Simulator/src-tauri/gen/android/app/build/outputs/apk/universal/release/app-universal-release-unsigned.apk
+          - name: Upload aab
+            uses: actions/upload-artifact@v3
+            with:
+              name: genish-impact-Tauri-android-aab
+              path: Genshin-Impact-Wish-Simulator/src-tauri/gen/android/app/build/outputs/bundle/universalRelease/app-universal-release.aab
