@@ -64,3 +64,46 @@ jobs:
             with:
               name: genish-impact-Tauri-${{ runner.os }}
               path: Genshin-Impact-Wish-Simulator/src-tauri/target/release/bundle/dmg/*
+    Build-android:
+        name: Build(android)
+        runs-on: ubuntu-latest
+        steps:
+          - name: checkout
+            uses: actions/checkout@v4
+          - name: install Rust stable
+            uses: dtolnay/rust-toolchain@stable
+          - name: install dependencies
+            run: |
+              sudo apt-get update
+              sudo apt-get install -y libsoup-3.0-dev libgtk-3-dev libwebkit2gtk-4.1-dev librsvg2-dev patchelf build-essential libayatana-appindicator3-dev javascriptcoregtk-4.1 build-essential curl wget file
+          - name: Setup NDK
+            uses: nttld/setup-ndk@v1.4.2
+            id: setup-ndk
+            with:
+              ndk-version: r25c
+          - name: Setup Java
+            uses: actions/setup-java@v4
+            with:
+              distribution: 'temurin'
+              java-version: '21'
+          - name: Add android target
+            run: rustup target add aarch64-linux-android armv7-linux-androideabi i686-linux-android x86_64-linux-android
+          - name: Use Node.js 20.x
+            uses: actions/setup-node@v4
+            with:
+              node-version: "20"
+          - name: Cache NPM dependencies
+            uses: actions/cache@v3
+            with:
+              path: ./Genshin-Impact-Wish-Simulator/node_modules
+              key: ${{ runner.OS }}-npm-frontend-cache
+              restore-keys: |
+                ${{ runner.OS }}-npm-frontend-cache
+          - name: Install Dependencies
+            run: |
+             cd Genshin-Impact-Wish-Simulator
+             yarn install
+          - name: Build
+            run: |
+             cd Genshin-Impact-Wish-Simulator
+             yarn run tauri android build
