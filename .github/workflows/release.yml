@@ -21,4 +21,4 @@ jobs:
       - name: Upload to Release (apk)
         uses: softprops/action-gh-release@v1
         with:
-            files: ./**/app*.*
+            files: ./**/app-*.*
