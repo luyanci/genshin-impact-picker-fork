@@ -14,7 +14,11 @@ jobs:
     steps:
       - name: Download Artifact
         uses: actions/download-artifact@v3
-      - name: Create Release
+      - name: Upload to Release
         uses: softprops/action-gh-release@v1
         with:
             files: ./**/genish-impact*.*
+      - name: Upload to Release (apk)
+        uses: softprops/action-gh-release@v1
+        with:
+            files: ./**/app-universal-release-unsigned.apk
