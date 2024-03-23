@@ -58,6 +58,12 @@ jobs:
             with:
               name: genish-impact-Tauri-${{ runner.os }}-deb
               path: Genshin-Impact-Wish-Simulator/src-tauri/target/release/bundle/deb/genish-impact_*.deb
+          - name: Upload rpm (Linux)
+            if: runner.os == 'Linux'
+            uses: actions/upload-artifact@v3
+            with:
+              name: genish-impact-Tauri-${{ runner.os }}-rpm
+              path: Genshin-Impact-Wish-Simulator/src-tauri/target/release/bundle/rpm/genish-impact_*.rpm
           - name: Upload dmg (Macos)
             if: runner.os == 'macos'
             uses: actions/upload-artifact@v3
