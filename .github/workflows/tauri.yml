@@ -9,6 +9,14 @@ on:
       paths:
            - Genshin-Impact-Wish-Simulator/src-tauri/**/**
            - Genshin-Impact-Wish-Simulator/package.json
+    push:
+      branches:
+           - main # default branch
+      paths:
+           - Genshin-Impact-Wish-Simulator/src-tauri/**/**
+           - Genshin-Impact-Wish-Simulator/package.json
+           - Genshin-Impact-Wish-Simulator/src/**/**
+
 jobs:
     Build-Tauri:
         name: Build
