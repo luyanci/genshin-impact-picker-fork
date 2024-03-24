@@ -6,7 +6,7 @@ on:
     pull_request:
       branches:
            - main # default branch
-        paths:
+      paths:
            - Genshin-Impact-Wish-Simulator/src-tauri/**/**
 jobs:
     Build-Tauri:
