@@ -3,7 +3,11 @@ name: Build app with Tauri
 on:
     workflow_dispatch:
     workflow_call:
-
+    pull_request:
+      branches:
+           - main # default branch
+        paths:
+           - Genshin-Impact-Wish-Simulator/src-tauri/**/**
 jobs:
     Build-Tauri:
         name: Build
