@@ -72,5 +72,5 @@ jobs:
           path: electron-static/genish-impact-${{ runner.os }}-x64.zip
   Build-Tauri:
     name: Build app with Tauri
-    if: ${{github.event_name == 'workflow_call'}} || ${{github.event_name == 'workflow_dispatch'}}
+    if: ${{github.event_name == 'workflow_call'}} 
     uses: ./.github/workflows/tauri.yml
