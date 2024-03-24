@@ -5,9 +5,9 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-packager ./ genish-impact --electron-version=28.1.0 --overwrite --asar",
-    "build-darwin-x64": "electron-packager ./ genish-impact --arch=x64 --electron-version=28.1.0 --overwrite --asar",
-    "build-win": "electron-packager ./ genish-impact  --platform=win32 --electron-version=28.1.0 --arch=x64 --overwrite --asar"
+    "build": "electron-packager ./ genish-impact --electron-version=29.1.5 --overwrite --asar",
+    "build-darwin-x64": "electron-packager ./ genish-impact --arch=x64 --electron-version=29.1.5 --overwrite --asar",
+    "build-win": "electron-packager ./ genish-impact  --platform=win32 --electron-version=29.1.5 --arch=x64 --overwrite --asar"
 
   },
   "author": "",
