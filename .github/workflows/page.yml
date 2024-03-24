@@ -8,7 +8,6 @@ on:
       - main # default branch
     paths:
       - Genshin-Impact-Wish-Simulator/src/**/**
-      - Genshin-Impact-Wish-Simulator/package.json
 
 jobs:
   Build:
