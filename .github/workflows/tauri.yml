@@ -8,6 +8,7 @@ on:
            - main # default branch
       paths:
            - Genshin-Impact-Wish-Simulator/src-tauri/**/**
+           - Genshin-Impact-Wish-Simulator/package.json
 jobs:
     Build-Tauri:
         name: Build
