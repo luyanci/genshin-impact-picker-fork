@@ -18,5 +18,5 @@ jobs:
             name: frontend
       - name: Remove old
         run: |
-         cd election-static
+         cd electron-static
          rm -rf static
