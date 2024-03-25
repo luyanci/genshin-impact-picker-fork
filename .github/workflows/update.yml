@@ -1,0 +1,22 @@
+name: Update page
+
+on:
+ workflow_dispatch:
+
+jobs:
+  Build:
+    uses: ./.github/workflows/page.yml
+  release:
+    needs: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@2
+      - name: Download Artifact
+        uses: actions/download-artifact@v3
+        with:
+            name: frontend
+      - name: Remove old
+        run: |
+         cd election-static
+         rm -rf static
