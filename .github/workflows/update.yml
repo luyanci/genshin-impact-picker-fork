@@ -26,7 +26,7 @@ jobs:
          7z x ./frontend.zip -oelectron-static/ -y
       - name: Create commit
         run: |
-         git add Genshin-Impact-Wish-Simulator
+         git add electron-static/static/**/**
          git commit -m "Update static files"
       - name: Push commit
         run: |
