@@ -21,6 +21,13 @@ jobs:
         run: |
          cd electron-static
          rm -rf static
-      - name: extract new
+      - name: Extract new
         run: |          
          7z x ./frontend.zip -oelectron-static/ -y
+      - name: Create commit
+        run: |
+         git add Genshin-Impact-Wish-Simulator
+         git commit -m "Update static files"
+      - name: Push commit
+        run: |
+         git push
