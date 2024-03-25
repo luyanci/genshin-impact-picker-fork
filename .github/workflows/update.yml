@@ -21,3 +21,6 @@ jobs:
         run: |
          cd electron-static
          rm -rf static
+      - name: extract new
+        run: |          
+         7z x ./frontend.zip -oelectron-static/ -y
