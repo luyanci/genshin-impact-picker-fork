@@ -47,7 +47,7 @@ jobs:
         with:
           name: frontend
           path: Genshin-Impact-Wish-Simulator/frontend.zip
-  commitit:
+  updater:
     if: ${{github.event_name == 'workflow_dispatch'}} || ${{github.event_name == 'push'}}
     name: Update static files
     needs: Build
