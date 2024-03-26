@@ -8,7 +8,6 @@ on:
       - main # default branch
     paths:
       - electron-static/**/**
-      - Genshin-Impact-Wish-Simulator/src/**/**
       - Genshin-Impact-Wish-Simulator/src-tauri/**/**
  pull_request:
     branches:
@@ -19,12 +18,8 @@ on:
 
 
 jobs:
-  Page:
-    name: Build Pages
-    uses: ./.github/workflows/page.yml
   Build-app:
     name: Build app with Electron
-    needs: Page
     strategy:
       fail-fast: false
       matrix:
