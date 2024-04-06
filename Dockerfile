@@ -7,7 +7,7 @@ ARG BASE_PATH='/root/genish-picker'
 WORKDIR "${BASE_PATH}/Genshin-Impact-Wish-Simulator"
 
 # 编译前端
-COPY /frontend ./
+COPY /Genshin-Impact-Wish-Simulator ./
 RUN npm install && npm run build
 
 FROM nginx:alpine
