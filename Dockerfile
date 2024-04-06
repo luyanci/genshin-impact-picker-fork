@@ -11,7 +11,7 @@ COPY /Genshin-Impact-Wish-Simulator ./
 RUN npm install && npm run build
 
 FROM nginx:alpine
-COPY --from=builder "/Genshin-Impact-Wish-Simulator/.vercel/output/static" "/usr/share/nginx/html"
+COPY --from=builder "/Genshin-Impact-Wish-Simulator/Genshin-Impact-Wish-Simulator/.vercel/output/static" "/usr/share/nginx/html"
 COPY default.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
