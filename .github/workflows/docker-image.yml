@@ -39,7 +39,7 @@ jobs:
          yarn run build
       - name: Build Docker image
         run: |
-          docker build -t maizig/ysdm:latest .
+          docker build -t luyanci/genish-picker:latest .
       - name: Login to DockerHub
         uses: docker/login-action@v1
         with:
@@ -50,4 +50,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: maizig/ysdm:latest
+          tags: luyanci/genish-picker:latest
