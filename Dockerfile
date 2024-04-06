@@ -3,6 +3,8 @@
 #
 
 FROM node:lts-bullseye AS builder
+ARG BASE_PATH='/root/genish-picker'
+WORKDIR "${BASE_PATH}/frontend"
 
 # 编译前端
 COPY /frontend ./
