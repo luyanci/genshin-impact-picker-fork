@@ -13,7 +13,7 @@ jobs:
             os: [windows,ubuntu,macos]
         runs-on: ${{ matrix.os }}-latest
         steps:
-          - uses: actions/checkout@v4.1.1
+          - uses: actions/checkout@v4.1.2
           - name: install Rust stable
             uses: dtolnay/rust-toolchain@stable
           - name: install dependencies (ubuntu only)
