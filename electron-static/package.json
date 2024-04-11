@@ -17,6 +17,6 @@
     "express": "^4.19.2"
   },
   "devDependencies": {
-    "electron": "^29.2.0"
+    "electron": "^29.3.0"
   }
 }
