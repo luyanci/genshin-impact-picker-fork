@@ -13,7 +13,7 @@ jobs:
             os: [windows,ubuntu,macos]
         runs-on: ${{ matrix.os }}-latest
         steps:
-          - uses: actions/checkout@v4.1.1
+          - uses: actions/checkout@v4.1.3
           - name: install Rust stable
             uses: dtolnay/rust-toolchain@stable
           - name: install dependencies (ubuntu only)
@@ -48,25 +48,25 @@ jobs:
              yarn run tauri build
           - name: Upload (Windows)
             if: runner.os == 'windows'
-            uses: actions/upload-artifact@v4.3.1
+            uses: actions/upload-artifact@v4.3.3
             with:
               name: genish-impact-Tauri-${{ runner.os }}
               path: Genshin-Impact-Wish-Simulator/src-tauri/target/release/bundle/
           - name: Upload Appimage (Linux)
             if: runner.os == 'Linux'
-            uses: actions/upload-artifact@v4.3.1
+            uses: actions/upload-artifact@v4.3.3
             with:
               name: genish-impact-Tauri-${{ runner.os }}-appimage
               path: Genshin-Impact-Wish-Simulator/src-tauri/target/release/bundle/appimage/genish-impact_*.AppImage
           - name: Upload deb (Linux)
             if: runner.os == 'Linux'
-            uses: actions/upload-artifact@v4.3.1
+            uses: actions/upload-artifact@v4.3.3
             with:
               name: genish-impact-Tauri-${{ runner.os }}-deb
               path: Genshin-Impact-Wish-Simulator/src-tauri/target/release/bundle/deb/genish-impact_*.deb
           - name: Upload dmg (Macos)
             if: runner.os == 'macos'
-            uses: actions/upload-artifact@v4.3.1
+            uses: actions/upload-artifact@v4.3.3
             with:
               name: genish-impact-Tauri-${{ runner.os }}-dmg
               path: Genshin-Impact-Wish-Simulator/src-tauri/target/release/bundle/dmg/*.dmg
