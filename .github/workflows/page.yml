@@ -42,7 +42,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./Genshin-Impact-Wish-Simulator/.vercel/static
+          publish_dir: ./Genshin-Impact-Wish-Simulator/.vercel/output/static
   updater:
     if: false
     name: Update static files
