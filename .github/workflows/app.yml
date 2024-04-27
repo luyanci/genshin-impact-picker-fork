@@ -45,7 +45,7 @@ jobs:
       - name: Get static files
         run: |
          cd electron-static
-         git clone -b gh_pages https://github.com/${{ github.repository }} static
+         git clone -b gh-pages https://github.com/${{ github.repository }} static
 
       - name: Build
         run: |
