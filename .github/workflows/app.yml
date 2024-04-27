@@ -49,7 +49,7 @@ jobs:
       - name: Get static files
         run: |
          cd electron-static
-         git clone https://github.com/${{ github. repository }} -b gh_pages static
+         git clone https://github.com/${{ github.repository }} -b gh_pages static
       - name: Package (${{ runner.os }})
         run: |
          cd electron-static
