@@ -38,17 +38,13 @@ jobs:
         run: |
          cd Genshin-Impact-Wish-Simulator
          yarn run build
-      - name: Package
-        run: |
-         cd Genshin-Impact-Wish-Simulator
-         7z a -tzip frontend.zip ./.vercel/output/static
-      - name: Upload
-        uses: actions/upload-artifact@v4.3.1
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          name: frontend
-          path: Genshin-Impact-Wish-Simulator/frontend.zip
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./Genshin-Impact-Wish-Simulator/.vercel/static
   updater:
-    if: ${{github.event_name == 'workflow_dispatch'}}
+    if: false
     name: Update static files
     needs: Build
     runs-on: ubuntu-latest
