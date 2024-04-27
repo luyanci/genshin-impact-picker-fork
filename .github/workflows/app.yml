@@ -42,14 +42,15 @@ jobs:
         run: |
          cd electron-static
          yarn install
+      - name: Get static files
+        run: |
+         cd electron-static
+         git clone -b gh_pages https://github.com/${{ github.repository }} static
+
       - name: Build
         run: |
          cd electron-static
          yarn run build
-      - name: Get static files
-        run: |
-         cd electron-static
-         git clone https://github.com/${{ github.repository }} -b gh_pages static
       - name: Package (${{ runner.os }})
         run: |
          cd electron-static
