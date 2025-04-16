@@ -1,0 +1,16 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/electron-static/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 20
+- package-ecosystem: npm
+  directory: "/Genshin-Impact-Wish-Simulator/"
+  schedule:
+    interval: weekly
+  open-pull-requests-limit: 20
+- package-ecosystem: "github-actions"
+  directory: "/"
+  schedule:
+    interval: "daily"
